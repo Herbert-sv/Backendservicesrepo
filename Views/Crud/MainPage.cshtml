@@ -1,0 +1,71 @@
+﻿@model IEnumerable<PersonalExampleWebPage.Models.ModelBase>;
+@{
+    ViewData["Title"] = "CrudMainPage";
+
+ }
+
+<body onload="boxinfo()">
+
+
+<h1 class="text-center" style="font-family:Arial">@ViewBag.CrudTemplate</h1>
+<hr />
+
+
+ 
+<div class="d-flex justify-content-md-end">
+ <div>
+  <a class="btn btn-success" asp-action="Manageaddon" asp-controller="Crud">Add Employee</a>
+ </div>
+    <div>   
+        <a class="btn btn-primary"  asp-controller="Home">Consume API_Inprocess</a>
+      </div>
+ 
+  </div>
+<br />
+
+
+<table class="table table-responsive">
+    <form>
+        
+       
+       <tr>
+       <th>Id</th>
+       <th>Name</th>
+       <th>Address</th>
+       <th>Position</th>
+       <th>Salary</th>
+        <th>Action</th>
+        <th>Action</th>
+       </tr>
+       
+@foreach(var List in Model){
+       <tbody>
+           <tr>
+               <td> <input class="form-control"type="number" name="id" value="@List.Id" readonly ></td>
+               <td><input class="form-control" type="text" name="displayname" value="@List.DisplayName" readonly ></td>
+               <td><input class="form-control" type="text" name="address" value="@List.Address" readonly /></td>
+               <td><input class="form-control" type="text" name="position" value="@List.Position" readonly/></td>
+               <td><input class="form-control" type="text" name="salary" value="@List.Salary" readonly/></td>
+               <td><a asp-action="Makechanges" asp-controller="Crud" asp-route-Id="@List.Id">Edit</a></td>
+               <td><a asp-action="RemoveUser" asp-controller="Crud" asp-route-Id="@List.Id">Remove</a></td>
+                
+           </tr>
+       </tbody>
+}
+
+    </form>
+</table>
+    <div class="d-flex justify-content-md-start">
+        <a class="btn btn-primary" asp-action="MainPage" asp-controller="Crud">Load initial data</a>
+    </div>
+
+
+<script>
+
+    function boxinfo(){
+        alert("Please check out the navigation tips, before proceeding to pull the API ");
+    }
+
+ </script>
+
+</body>

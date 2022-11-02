@@ -1,0 +1,39 @@
+﻿@model IEnumerable<PersonalExampleWebPage.Models.NetworkDetails>;
+@{
+    ViewData["Title"] = "Api call ";
+}
+
+
+
+<h3 class="text-center">Api invoke</h3>
+<br />
+<hr />
+
+
+<table class="table table-responsive">
+    <thead>
+        <tr>
+         <th>Host server</th>
+         <th>Host site</th>
+         <th>Ip Address reached</th>
+     </tr>
+    </thead>
+   
+    @foreach(var List in @Model.ToList()){
+    <tbody>
+        <tr>
+            <td>@List.LocalMachine</td>
+            <td>@List.HostAddress</td>
+            <td>@List.ReachableHost</td>
+        </tr>
+    </tbody>
+    }
+</table>
+
+<a class="btn btn-primary"asp-action="Index" asp-controller="Home">Return to main site</a>
+<br />
+
+<p style="background-color:bisque">
+    <em>*note:</em>
+    The ip addresses shown, are the host domain name 
+</p>

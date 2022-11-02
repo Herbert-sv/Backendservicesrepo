@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Navigation Tips";
+
+    ViewData["Link"] = Html.Raw("<a href='https://www.nuget.org/packages/Newtonsoft.Json/13.0.2-beta2'> Newtonsoft Package</a>");
+
+   
+
+}
+
+
+<head>
+    <style>
+        #Infolinks{
+            font-family:Arial;
+            font-size:14px; 
+            color:blue;   
+        }
+        #p_block{
+            background-color: cornsilk;
+            border: solid;
+            padding: 5px 5px 5px 5px;
+            
+        }
+        ol{
+            list-style-type:none;
+        }
+    </style>
+</head>
+
+<h2 class="text-center" style="color:blue;">Personal web site tips</h2>
+<hr />
+
+<br />
+<div class="d-flex justify-content-center">
+    <p style="text-decoration-line:underline;">Project folders</p>
+    <img style="display:block" src="~/Personalwebpagefolders.png" width="350" height="450" style="box-shadow: 5px 10px gray;"/>
+</div>
+
+<div class="d-flex justify-content-end">
+    <a class="btn btn-primary" asp-action="Index" asp-controller="Home">Return to main page</a>
+</div>
+<br />
+<div>
+    <p id="Infolinks">Live services</p>
+    <p>
+        <ol id="p_block">
+            <li>The tasks running on local computer</li>
+            <li>Kill a task, is no enable.</li>
+            <li>Requires namespace System.Diagnostics</li>
+            <li>May find bugs in IOS System</li>
+        </ol>
+    </p>
+
+</div>
+<br />
+
+<div>
+    <p id="Infolinks">Network ping details</p>
+    <ol id="p_block">
+        <li>Web site address is only for demostration</li>
+        <li>The Ping web address box is not enable</li>
+        <li>Requires name space Net.NetworkInformation</li>
+        <li>May find bugs in IOS system</li>
+    </ol>
+</div>
+<br />
+
+<div>
+    <p id="Infolinks">Create| Remove| Update| Delete</p>
+    <ol id="p_block">
+        <li>The CRUD is programmed with local memory</li>
+        <li>The features of Remove| Update| Delete can be perform with the existing memory (1..4)</li>
+        <li>The Create feature will go on the temporary memory for the project.</li>
+    </ol>
+</div>
+<br />
+
+<div>
+    <p id="Infolinks">API tips</p>
+    <ol id="p_block">
+        <li>The API is generated with local data</li>
+        <li>The Invoke Api is pointing to port:44346</li>
+        <li>Using localhost</li>
+        <li>Requires running the invoke API with on a different port</li>
+        <li>The library that is used to manage the data from and to is Newtonsoft json</li>
+        <li>@ViewData["Link"]</li>
+        <li>Requires name space Net.http</li>
+    </ol>
+</div>
+

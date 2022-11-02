@@ -1,0 +1,79 @@
+﻿@model System.Net.NetworkInformation.PingReply;
+@{
+    ViewData["Title"] = "Main site";
+
+    var inf = Model.Buffer.ToList();
+
+    var BufferInfo = inf.Count;
+
+}
+
+<title>@ViewBag.Namepage</title>
+
+
+<h2 class="text-center"> Ping Network information</h2>
+<hr />
+<br />
+<div class="d-flex justify-content-end">
+    <div>
+        <button class="btn btn-primary" onclick="btnjs()">Main page </button>
+    </div>
+</div>
+<p id="pinfo">Host address being ping</p>
+<div>
+<input id="box" class="form-control" type="text" value="www.visualstudio.microsoft.com"  readonly /> 
+</div>
+<br />
+<div>
+    <button class="btn btn-primary" onclick="Chngattr()">Edit</button>
+</div>
+<br/>
+
+<table class="table table-responsive">
+    <thead>
+    <tr>
+        <th>Host Address ping..</th>
+            <th>@Model.Address</th>
+            <tr/>
+        <tr>
+            <th>Ping Status</th>
+            <th>@Model.Status</th>
+        <tr />
+        <tr>
+            <th>Ping menthod use</th>
+            <th>@Model.Options?.Ttl</th>
+        <tr />
+        <tr>
+            <th>Round trip time</th>
+            <th>@Model.RoundtripTime</th>
+         </tr>
+
+        <tr>
+            <th>Buffer Lapse</th>
+            <th>@BufferInfo</th>
+        </tr>
+    </thead>
+ 
+</table>
+
+
+
+
+<script>
+    function btnjs(){
+
+        window.open("https://localhost:7140/");
+    }
+
+    function Chngattr(){
+
+     var btn_=   document.querySelector("#box").removeAttribute("readonly");
+    
+    }
+    
+</script>
+
+<script>
+    document.getElementById("pinfo").style.color="blue";
+</script>
+

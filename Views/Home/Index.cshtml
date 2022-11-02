@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Main Page";
+    
+}
+
+<head>
+    <style>
+        a{
+            text-align-last:center;
+            font-size:18px;
+            text-decoration-line:none;
+        }
+    </style>
+</head>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome - @ViewBag.UserName </h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a></p>
+</div>
+
+
+<h1 class="text-center"> Back end Services </h1>
+<hr />
+<br />
+<br />
+
+
+
+<div class="d-flex justify-content-evenly">
+    <div>
+        <a asp-controller="home" asp-action="MyNetworkInfo">Network details</a>
+        <img src="https://azusa.tech/wp-content/uploads/2020/02/gallery-img-5-1024x524.jpg" width="250" height="200" />
+    </div>
+    <div>
+        <a class="text-center"  asp-controller="home" asp-action="ApiCall">Api details</a>
+        <img src="https://www.elemental.co.za/cms/resources/uploads/blog/86/926f6aaba773.png" width="250" height="200" />
+    </div>
+    <div>
+        <a class="text-center"  asp-controller="home" asp-action="MachineServices">Live Tasks</a>
+         <img src="https://www.hp.com/us-en/shop/app/assets/images/uploads/prod/how-to-overclock-pc-cpu-hero1534383854365.jpg" width="250" height="200" />
+    </div>
+    <div>
+        <a class="text-center" asp-area="" asp-controller="CRUD" asp-action="MainPage">CRUD Example(Local Memory)</a>
+         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRybAiWrweuPy9oSjPvpEuRpmRkWjT9j79UhQ&usqp=CAU"  width="250" height="200" />
+    </div>
+
+</div>
+
+
+
+
+
+
+
+

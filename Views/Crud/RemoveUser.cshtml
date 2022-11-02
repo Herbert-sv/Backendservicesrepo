@@ -1,0 +1,45 @@
+﻿@model PersonalExampleWebPage.Models.ModelBase;
+@{
+
+    ViewData["Title"] = "Manage Portal-Delete";
+}
+<h3 class="text-center">Remove the offboarding user</h3>
+
+<div class="form-control">
+
+    <form asp-action="RemoveUser" asp-controller="crud" method="post">
+        <div>
+            <label for"Id">Id</label>
+            <input id="input" class="form-control" type="text" name="id" value="@Model.Id" readonly />
+
+        </div>
+        <div>
+            <label for"Displayname">Display Name</label>
+            <input id="input" class="form-control" type="text" name="name" value="@Model.DisplayName" />
+
+        </div>
+
+        <div>
+            <label for"Address">Address</label>
+            <input id="input" class="form-control" type="text" name="address" value="@Model.Address" />
+
+        </div>
+        <div>
+            <label for"Position">Position</label>
+            <input id="input" class="form-control" type="text" name="position" value="@Model.Position" />
+
+        </div>
+        <div>
+            <label for"Salary">Salary</label>
+            <input id="input" class="form-control" type="text" name="salary" value="@Model.Salary" />
+        </div>
+        <div>
+            <button class="btn btn-primary">Remove</button>
+            <button class="btn btn-primary" onclick="document.getElementById('input').value=' ';">Clear fields</button>
+
+        </div>
+
+    </form>
+</div>
+
+   

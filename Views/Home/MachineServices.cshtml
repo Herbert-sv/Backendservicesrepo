@@ -1,0 +1,95 @@
+﻿@model IEnumerable<System.Diagnostics.Process>;
+@{
+    ViewData["Title"] = "Host services page";
+    var ActionButton = Html.Raw("<button onclick='bto()' class='btn btn-primary'>End task</button>");
+
+}
+
+
+    <head>
+
+    <style>
+        #Banner{
+            position:fixed;
+            top:0;
+            background-color:red;
+             color:white;
+            font-size:20px; 
+            font-family:Arial;
+            visibility: hidden;
+            width:1200px;
+            padding: 10px 10px;
+
+       }      
+       #timecolor{
+           font-weight:bold;
+           font-size:14px;
+
+       }
+    </style>
+</head>
+
+<div class="d-flex justify-content-between" id="Banner">
+    <p> This feature is not enabled !</p>
+    <div>
+    <button onclick="btc()">dismiss</button>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between" id="timecolor">
+    <div>
+<h3>Live Tasks on your machine</h3>
+    </div>
+<div>
+     @DateTime.Now
+</div>
+</div>
+
+<hr />
+
+<br />
+
+<table class="table table-responsive">
+
+    <thead>
+        <tr><th><b>ProcessInfo</b></th>
+        <th><b>Action</b></th></tr>
+    </thead>
+    <tbody>
+
+        @foreach (var process in Model)
+        {
+
+            <tr><td>@process</td>
+            <td>@ActionButton</td></tr>
+        }
+
+    </tbody>
+
+</table>
+<div class="d-flex justify-content-end">
+
+    <button class="btn btn-success" onclick="window.scrollTo(0,0)">Scroll up</button>
+</div>
+
+
+<script>
+
+    function bto(){
+       
+        document.getElementById("Banner").style.visibility="visible";            
+    }
+
+    
+ </script>
+
+ <script>
+     function btc(){
+
+     document.getElementById("Banner").style.visibility="hidden";
+     }
+
+ </script>
+
+
+

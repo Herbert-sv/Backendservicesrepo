@@ -1,0 +1,55 @@
+﻿@{
+
+    ViewData["Title"] = "Manage users - Add user";
+}
+
+
+
+<h3 class="text-center">Add any employee</h3>
+
+
+<div class="form-control">
+
+    <form asp-action="Manageaddon" asp-controller="crud" method="post">
+    <div>
+        <label for"Id">Id</label>
+        <input id="input" class="form-control" type="text" name="id"/>
+
+    </div>
+     <div>
+        <label for"Displayname">Display Name</label>
+        <input id="input" class="form-control" type="text" name="name"/>
+
+    </div>
+
+     <div>
+        <label for"Address">Address</label>
+        <input id="input" class="form-control" type="text" name="address"/>
+
+    </div>
+     <div>
+        <label for"Position">Position</label>
+        <input id="input" class="form-control" type="text" name="position"/>
+
+    </div>
+     <div>
+        <label for"Salary">Salary</label>
+        <input id="input" class="form-control" type="text" name="salary"/>
+    </div>
+     <div>
+        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-primary" onclick="document.getElementById('input').value=' ';">Clear fields</button>
+
+
+    </div>
+
+</form>
+
+</div>
+
+
+<script>
+//   document.getElementById("#input").value=' ';
+   
+
+</script>

@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - PersonalExampleWebPage</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/PersonalExampleWebPage.styles.css" asp-append-version="true" />
+    <style>
+
+        #txtnav{
+
+            font-family:Arial;
+            font-size:12px;
+
+        }
+    
+    </style>
+</head>
+
+@{
+
+    try{
+
+        ViewData["Userhostname"] = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
+    }
+    catch (System.Exception ex) {
+
+
+        ViewData["Userhostname"] = $"Your are in an unsupported OS for this feature {ex}";
+
+
+    }
+
+    }
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@Html.Raw($"<h6>Hi {@ViewData["Userhostname"]}</h6>")@DateTime.Now</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-primary"  asp-area="" asp-controller="Home" asp-action="Index">Personal site</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary"  asp-area="" asp-controller="Home" asp-action="MachineServices">Live host services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary"  asp-area="" asp-controller="Home" asp-action="MyNetworkInfo">Network Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary"  asp-area="" asp-controller="Example" asp-action="NetworkDetails">Api Example</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-primary"  asp-area="" asp-controller="CRUD" asp-action="MainPage">CRUD Example(Local Memory)</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-s-m-inline-flex justify-content-end">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>
+                            <a class="btn btn-light" style="background-color:#0d6efd; color:white" asp-controller="home" asp-action="NavigationTips">Navigation tips</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer text-muted">
+        &copy; 2022 -Personal ExampleWebPage | <em> Herbert Ochoa</em>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    
+</body>
+</html>
+
+                      
